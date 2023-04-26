@@ -1,0 +1,33 @@
+.todos,.todos-done{
+    
+    width: 250px;
+    padding: 20px;
+}
+.todo{
+    border: none;
+    cursor: move;
+    
+}
+.todo:focus{
+    outline: none;
+}
+.crt-todo{
+    margin-bottom: 20px;
+}
+.wrapper{
+    display: flex;
+    gap:50px;
+}
+.done{
+     background-color: rgb(39, 19, 58);
+    padding: 20px;
+}
+.todos{
+    background-color: rgb(39, 19, 58);
+}
+.td{
+    cursor: move;
+}
+.dragged{
+    background-color: black;
+}
