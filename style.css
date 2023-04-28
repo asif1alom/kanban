@@ -1,33 +1,40 @@
-.todos,.todos-done{
-    
-    width: 250px;
-    padding: 20px;
+.kanban{
+    display:flex ;
+    padding: 30px;
+    width: 750px;
+    background-color: rgb(57, 139, 115);
+    border-radius: 5px;
 }
-.todo{
-    border: none;
-    cursor: move;
-    
+.kanban *{
+    font-family: "poppins";
 }
-.todo:focus{
-    outline: none;
+.kanban__column{
+    flex: 1;
 }
-.crt-todo{
+.kanban__column:not(:last-child){
+    margin-right: 30px;
+}
+.kanban__column-title{
     margin-bottom: 20px;
+    font-size: 30px;
+    color: white;
+    user-select: none;
 }
-.wrapper{
-    display: flex;
-    gap:50px;
+.kanban__item-input{
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.done{
-     background-color: rgb(39, 19, 58);
-    padding: 20px;
-}
-.todos{
-    background-color: rgb(39, 19, 58);
-}
-.td{
-    cursor: move;
-}
-.dragged{
-    background-color: black;
+.kanban__add-item{
+    width:100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
