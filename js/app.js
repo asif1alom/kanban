@@ -1,3 +1,3 @@
-import kanbanAPI from "./api/kanbanApi";
+import kanbanAPI from "./KanbanAPI.js";
 
-console.log(kanbanAPI.getItems(1));
+kanbanAPI.deletItem(4695);
