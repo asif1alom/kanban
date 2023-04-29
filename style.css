@@ -38,3 +38,12 @@
     cursor: pointer;
     margin-top: 10px;
 }
+.kanban__dropzone {
+    height: 10px;
+    transition: background 0.15s, height 0.15s;
+}
+
+.kanban__dropzone--active {
+    height: 20px;
+    background: rgba(0, 0, 0, 0.25);
+}
