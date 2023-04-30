@@ -11,7 +11,7 @@ export default class kanbanAPI{
         const data = read();
         const column = data.find(column => column.id == columnId);
         const item = {
-            id: Math.floor(Math.random() * 100000),
+            id: Math.floor(Math.random() * 1000000),
             content
         };
         if (!column) {
@@ -38,20 +38,25 @@ export default class kanbanAPI{
         item.content = newProps.content === undefined ? item.content : newProps.content;
 
        //Update column and position
-        if (newProps.columnId !==   undefined && newProps. position!==undefined) {
-            const targetColumn = data.find(column => column.Id == newProps.columnId);
+       if (
+			newProps.columnId !== undefined
+			&& newProps.position !== undefined
+		) {
+			const targetColumn = data.find(column => column.id == newProps.columnId);
 
-            if (!targetColumn) {
-                throw new Error("target column not found");
-            }
-            //delet the item for it's current column
-            currentColumn.items.splice(currentColumn.items.indexOf(item), 1);
-            //Move item into its new column and position
+			if (!targetColumn) {
+				throw new Error("Target column not found.");
+			}
 
-            targetColumn.items.splice(newProps.position, 0, item);
-        }
-        save(data);
-    }
+			// Delete the item from it's current column
+			currentColumn.items.splice(currentColumn.items.indexOf(item), 1);
+
+			// Move item into it's new column and position
+			targetColumn.items.splice(newProps.position, 0, item);
+		}
+
+		save(data);
+	}
     static deletItem(itemId) {
         const data = read();
 
